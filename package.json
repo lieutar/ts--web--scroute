@@ -1,0 +1,42 @@
+{
+  "name": "scroute",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "bun run lint && bun run typecheck",
+    "clean": "rm -r dist",
+    "coverage": "vitest: --coverage",
+    "coverage:bun": "bun test --coverage",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "test": "vitest",
+    "typecheck": "tsc -p tsconfig.build.json --noEmit"
+  },
+  "dependencies": {
+    "@looper-utils/fs": "*",
+    "@looper-utils/types": "*",
+    "fancy-logger": "*",
+    "pkg-dir": "^9.0.0",
+    "qoop": "*",
+    "stacktrace-parser": "^0.1.11"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@vitest/coverage-v8": "latest",
+    "depcheck": "latest",
+    "eslint": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-plugin-prettier": "latest",
+    "looper-ts": "*",
+    "vitest": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
