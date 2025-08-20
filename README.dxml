@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sec lang="ja">
+  <title>scroute</title>
+  Script Chain Router for web apps.
+
+  - 現状は [bun](https://bun.sh) を前提として開発中
+  - たとえば、`/path/to/the/resource` へのリクエストに対して
+    1. &lt;document root&gt;/path/to/the/resource&lt;suffix&gt; がデフォルトリクエストハンドラとして選択される
+    2. デフォルトリクエストハンドラの実行までに
+       - &lt;document root&gt;/.action.ts
+       - &lt;document root&gt;/path/.action.ts
+       - &lt;document root&gt;/path/to/.action.ts
+       - &lt;document root&gt;/path/to/the/.action.ts
+       - &lt;document root&gt;/path/to/the/resource.action.ts
+       が存在すれば、それらが順番に実行される。これらスクリプトは最終的なリクエストハンドラが用いる環境を設定したり、
+       認証などを元に別のリクエストハンドラを選択したりすることができる。
+  - 組込みのリクエストハンドラとしてはデフォルトで `*.builder.ts` に紐づけられたハンドラで、
+    これは TypeScript モジュールに直接レスポンスの構築方法が記述されたもの。
+
+    もうひとつの組込みハンドラは空文字列のサフィクスに紐づけられたハンドラであり、
+    これは静的ファイル配信に用いることができる。
+
+  <sec><!--==================================================================-->
+    <title>Installation</title>
+    <d>
+      現在、[ワークスペース](ws:/)内での開発にのみ対応しており、公式なインストール方法はありません。
+      <d lang="en">
+        Now time, this project is supported for development on my [workspace](ws:/), and
+        this don't provide regular way to install.
+      </d>
+    </d>
+  </sec>
+</sec>

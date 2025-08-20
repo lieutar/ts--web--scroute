@@ -1,15 +1,9 @@
 # scroute
 
-To install dependencies:
+Script Chain Router for web apps.
 
-```bash
-bun install
-```
+## Installation
 
-To run:
+Now time, this project is supported for development on my  [workspace](https://github.com/lieutar/looper-ts) , and
+this don't provide regular way to install.
 
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.2.18. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
